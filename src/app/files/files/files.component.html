@@ -1,0 +1,34 @@
+<button nbButton hero status="primary">Upload</button>
+<div class="row ">
+    <nb-card class="col-12">
+        <nb-card-header>Files</nb-card-header>
+        <nb-card-body>
+            <div class="row">
+                <div class="col-3" *ngFor="let file of files">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" [src]="file.url " alt="{{file.name}}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{file.name}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nb-card-body>
+    </nb-card>
+</div>
+
+<div class="container">
+
+    <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0"> Gallery</h1>
+
+    <hr class="mt-2 mb-5">
+
+    <div class="row text-center text-lg-left">
+        <div class="col-lg-3 col-md-4 col-6" *ngFor="let file of files">
+            <a href="#" class="d-block mb-4 h-100">
+                <img class="img-fluid img-thumbnail" [src]="file.url " alt="{{file.name}}">
+            </a>
+        </div>
+    </div>
+
+</div>

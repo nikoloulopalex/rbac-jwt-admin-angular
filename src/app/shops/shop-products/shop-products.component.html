@@ -1,0 +1,28 @@
+<button nbButton hero status="primary">Add new</button>
+<div class="row ">
+    <nb-card class="col-12">
+        <nb-card-header>Products</nb-card-header>
+        <nb-card-body>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Sales Price</th>
+                        <th scope="col">Shop</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <th scope="row">{{product.id}}</th>
+                        <td>{{product.name}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.salesPrice}}</td>
+                        <td>{{product.shop.name}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </nb-card-body>
+    </nb-card>
+</div>

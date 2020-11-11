@@ -1,0 +1,34 @@
+<div class="row text-center">
+  <!-- <div class="col-12"> <img src="../../../assets/images/ico.png" class="logo"></div> -->
+</div>
+
+<h1 id="title" class="title">Sign In</h1>
+
+<form (ngSubmit)="onLogin()" #form="ngForm" aria-labelledby="title">
+
+  <div class="form-control-group">
+    <label class="label" for="inputEmail">Email address:</label>
+    <input nbInput fullWidth [(ngModel)]="email" #userEmail="ngModel" name="inputEmail" id="inputEmail" placeholder="Email address" autofocus [status]="userEmail.dirty ? (userEmail.invalid  ? 'danger' : 'success') : ''" [attr.aria-invalid]="userEmail.invalid && userEmail.touched ? true : null">
+    <ng-container *ngIf="userEmail.invalid && userEmail.touched">
+      <p class="caption status-danger" *ngIf="userEmail.errors?.required">Email is required!</p>
+      <p class="caption status-danger" *ngIf="userEmail.errors?.pattern">Email should be the real one!</p>
+    </ng-container>
+  </div>
+
+  <div class="form-control-group">
+    <label class="label" for="inputPassword">Password:</label>
+    <input nbInput fullWidth [(ngModel)]="password" #userPassword="ngModel" name="inputPassword" [type]="isPassword ? 'password' : 'text'" id="inputPassword" placeholder="Password" [status]="userPassword.dirty ? (userPassword.invalid  ? 'danger' : 'success') : ''"
+      [attr.aria-invalid]="userPassword.invalid && userPassword.touched ? true : null">
+    <div *ngIf="isPassword">
+      <span class="fa cursor-pointer fa-eye-slash field-icon toggle-password" (click)="togglePassword()"></span>
+    </div>
+    <div *ngIf="!isPassword">
+      <span class="fa cursor-pointer fa-eye field-icon toggle-password" (click)="togglePassword()"></span>
+    </div>
+    <ng-container *ngIf="userPassword.invalid && userPassword.touched ">
+      <p class="caption status-danger" *ngIf="userPassword.errors?.required">Password is required!</p>
+    </ng-container>
+  </div>
+
+  <button nbButton fullWidth status="primary" [disabled]="!form.valid">Sign In</button>
+</form>

@@ -1,0 +1,15 @@
+.logo {
+  // padding-left: 192px;
+  height: 70px;
+}
+
+::ng-deep .navigation .link nb-icon {
+  display: none !important;
+}
+.field-icon {
+  float: right;
+  margin-top: -24px;
+  margin-right: 10px;
+  position: relative;
+  z-index: 2;
+}

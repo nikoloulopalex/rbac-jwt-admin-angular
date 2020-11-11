@@ -1,0 +1,26 @@
+<button nbButton hero status="primary">Add new</button>
+<div class="row ">
+    <nb-card class="col-12">
+        <nb-card-header>Users</nb-card-header>
+        <nb-card-body>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">username</th>
+                        <th scope="col">email</th>
+                        <th scope="col">roles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <th scope="row">{{user.id}}</th>
+                        <td>{{user.username}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.roles[0].name}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </nb-card-body>
+    </nb-card>
+</div>
