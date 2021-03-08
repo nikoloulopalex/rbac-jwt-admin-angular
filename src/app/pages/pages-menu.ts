@@ -23,8 +23,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/shops',
   },
   {
-    title: 'files',
-    icon: 'shopping-bag-outline',
+    title: 'Files',
+    icon: 'file-text-outline',
     link: '/files',
   },
   {

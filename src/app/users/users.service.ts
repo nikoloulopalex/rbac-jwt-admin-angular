@@ -21,12 +21,9 @@ export class UsersService {
   }
 
   createUser(user): Observable<any> {
-    return this.http.post<any>('/iam/users', user);
+    return this.http.post<any>('/api/auth/signup', user);
   }
 
-  updateUser(user): Observable<any> {
-    return this.http.put<any>(`/iam/users/${user.userId}`, user);
-  }
 
   /** USER REQUESTS END HERE **/
 

@@ -3,18 +3,23 @@ import { CommonModule } from '@angular/common';
 
 import { UsersRoutingModule } from './users-routing.module';
 import { AdministratorsComponent } from './administrators/administrators.component';
-import { NbButtonModule, NbCardModule } from '@nebular/theme';
+import { NbButtonModule, NbCardModule, NbCheckboxModule } from '@nebular/theme';
 import { ThemeModule } from '../@theme/theme.module';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [AdministratorsComponent],
+  declarations: [AdministratorsComponent, CreateUserComponent],
   imports: [
     CommonModule,
     UsersRoutingModule,
     NbCardModule,
     ThemeModule,
-    NbButtonModule
+    NbButtonModule,
+    ReactiveFormsModule,
+    NbCheckboxModule,
+    FormsModule
   ]
 })
 export class UsersModule { }

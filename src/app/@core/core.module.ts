@@ -1,4 +1,4 @@
-import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
+import { ErrorHandler, ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NbAuthModule, NbDummyAuthStrategy } from '@nebular/auth';
 import { NbSecurityModule, NbRoleProvider } from '@nebular/security';
@@ -12,6 +12,9 @@ import {
 import { UserData } from './data/users';
 import { UserService } from './mock/users.service';
 import { MockDataModule } from './mock/mock-data.module';
+import { NbToastrModule } from '@nebular/theme';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Interceptor } from './utils/interceptor.service';
 
 const socialLinks = [
   {
@@ -87,6 +90,7 @@ export const NB_CORE_PROVIDERS = [
 @NgModule({
   imports: [
     CommonModule,
+    NbToastrModule
   ],
   exports: [
     NbAuthModule,
@@ -103,6 +107,11 @@ export class CoreModule {
       ngModule: CoreModule,
       providers: [
         ...NB_CORE_PROVIDERS,
+        {
+          provide: HTTP_INTERCEPTORS,
+          useClass: Interceptor,
+          multi: true
+        },
       ],
     };
   }

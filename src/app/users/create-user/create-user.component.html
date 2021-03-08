@@ -1,0 +1,42 @@
+<nb-card accent="primary">
+    <nb-card-header>
+        <i class="fa fa-user-plus mr-1"></i>Add User
+    </nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="createUserForm" (ngSubmit)="createUser()">
+            <div class="form-group">
+                <label for="username" class="required-label">Username</label>
+                <div class="col-xs-12">
+                    <input class="form-control" type="text" placeholder="Username" formControlName="username">
+                    <small class="form-text text-danger" *ngIf="createUserForm.get('username').invalid && isSubmitted">
+                        Please enter a valid username.</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="required-label">Email</label>
+                <div class="col-xs-12">
+                    <input class="form-control" type="email" placeholder="Email" formControlName="email">
+                    <small class="form-text text-danger" *ngIf="createUserForm.get('email').invalid && isSubmitted">
+                        Please enter a valid email.</small>
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="password" class="required-label">Password</label>
+                <div class="col-xs-12">
+                    <input class="form-control" type="password" placeholder="Password" formControlName="password">
+                    <small class="form-text text-danger" *ngIf="createUserForm.get('password').invalid && isSubmitted">
+                        Please enter your password.</small> </div>
+            </div>
+            <nb-card accent="danger">
+                <nb-card-header nbTooltip="Check administrator enabled roles" nbTooltipPlacement="end"> <i class="fa fa-unlock-alt mr-1"></i> Roles</nb-card-header>
+                <nb-card-body>
+                    <label class="label">Roles </label>
+                    <div class="validation-checkboxes  pb-2">
+                        <nb-checkbox status="primary" *ngFor="let role of selectedRoles" [(ngModel)]="role.status" id="a" name="a" [ngModelOptions]="{standalone: true}">{{role.roleName}}</nb-checkbox>
+                    </div>
+                </nb-card-body>
+            </nb-card>
+            <button nbButton hero status="primary" type="submit">Create User</button>
+        </form>
+    </nb-card-body>
+</nb-card>

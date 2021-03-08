@@ -33,7 +33,6 @@ import { Interceptor } from './@core/utils/interceptor.service';
     SecurityModule,
 
     ThemeModule.forRoot(),
-
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbDatepickerModule.forRoot(),
@@ -46,11 +45,7 @@ import { Interceptor } from './@core/utils/interceptor.service';
     CoreModule.forRoot(),
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: Interceptor,
-      multi: true
-    }
+
   ],
   bootstrap: [AppComponent],
 })

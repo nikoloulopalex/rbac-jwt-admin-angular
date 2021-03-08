@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NbToastrService } from '@nebular/theme';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { AuthService } from '../auth.service';
@@ -17,7 +18,7 @@ export class AuthenticationComponent implements OnInit {
   isPassword;
 
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService, private toastrService: NbToastrService) { }
 
   ngOnInit() {
     this.email = null;
