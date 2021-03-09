@@ -12,13 +12,15 @@ import { AuthenticationComponent } from './security/authentication/authenticatio
 import { PagesComponent } from './pages/pages.component';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'pages/dashboard', pathMatch: 'full' },
+
   {
     path: '', component: PagesComponent,
     children: [
       { path: 'users', loadChildren: './users/users.module#UsersModule' },
       { path: 'products', loadChildren: './products/products.module#ProductsModule' },
       { path: 'shops', loadChildren: './shops/shops.module#ShopsModule' },
-      { path: 'files', loadChildren: './files/files.module#FilesModule' }
+      { path: 'files', loadChildren: './files/files.module#FilesModule' },
     ]
   },
   {
@@ -26,14 +28,13 @@ export const routes: Routes = [
     loadChildren: () => import('./pages/pages.module')
       .then(m => m.PagesModule),
   },
+
   {
     path: '', component: NbAuthComponent,
     children: [
       { path: 'login', component: AuthenticationComponent },
     ]
   },
-  { path: '', redirectTo: 'pages/dashboard', pathMatch: 'full' },
-  // { path: '**', redirectTo: 'pages' },
 ];
 
 const config: ExtraOptions = {

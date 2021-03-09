@@ -16,6 +16,7 @@ export class ErrorHandlerService {
         this.router.navigate(['login']);
         break;
       default:
+        console.log(error);
         this.toastrService.show(error.statusText, 'Error:', { status: 'danger' });
         break;
     }

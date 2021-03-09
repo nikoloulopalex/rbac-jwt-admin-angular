@@ -1,0 +1,14 @@
+<div *ngFor=" let role of roles">
+    <div [ngSwitch]="role.name">
+        <div *ngSwitchCase="'ROLE_USER'">
+            <span class="badge badge-info">User</span>
+        </div>
+        <div *ngSwitchCase="'ROLE_MODERATOR'">
+            <span class="badge badge-warning">Moderator</span>
+        </div>
+        <div *ngSwitchCase="'ROLE_ADMIN'">
+            <span class="badge badge-danger">Admin</span>
+        </div>
+        <div *ngSwitchDefault>{{role.name}}</div>
+    </div>
+</div>

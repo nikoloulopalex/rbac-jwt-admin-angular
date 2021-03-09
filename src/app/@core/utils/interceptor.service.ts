@@ -23,6 +23,8 @@ export class Interceptor implements HttpInterceptor {
       }
     });
 
+    if (req.url === '/api/test/user' || req.url === '/api/test/mod' || req.url === '/api/test/admin') return next.handle(req);
+
     return next.handle(req).pipe(
       catchError((error) => {
         if (error instanceof HttpErrorResponse) this.errorHandlerService.handle(error);

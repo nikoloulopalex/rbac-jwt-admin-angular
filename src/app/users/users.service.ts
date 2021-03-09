@@ -24,6 +24,17 @@ export class UsersService {
     return this.http.post<any>('/api/auth/signup', user);
   }
 
+  testRoleUser(): Observable<any> {
+    return this.http.get<any>('/api/test/user');
+  }
+
+  testRoleMod(): Observable<any> {
+    return this.http.get<any>('/api/test/mod');
+  }
+
+  testRoleAdmin(): Observable<any> {
+    return this.http.get<any>('/api/test/admin');
+  }
 
   /** USER REQUESTS END HERE **/
 

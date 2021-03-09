@@ -1,0 +1,21 @@
+<nb-card>
+    <nb-card-header>Test Roles</nb-card-header>
+    <nb-card-body>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">User
+            </div>
+            <nb-icon *ngIf="!isUser" icon="close-square" status="danger" style="font-size: 1.85em;align-self: center;"></nb-icon>
+            <nb-icon *ngIf="isUser" icon="checkmark-square-2" status="success" style="font-size: 1.85em;align-self: center;"></nb-icon>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Moderator</div>
+            <nb-icon *ngIf="!isMod" icon="close-square" status="danger" style="font-size: 1.85em;align-self: center;"></nb-icon>
+            <nb-icon *ngIf="isMod" icon="checkmark-square-2" status="success" style="font-size: 1.85em;align-self: center;"></nb-icon>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">Administrator</div>
+            <nb-icon *ngIf="!isAdmin" icon="close-square" status="danger" style="font-size: 1.85em;align-self:center"></nb-icon>
+            <nb-icon *ngIf="isAdmin" icon="checkmark-square-2" status="success" style="font-size: 1.85em;align-self: center;"></nb-icon>
+        </div>
+    </nb-card-body>
+</nb-card>

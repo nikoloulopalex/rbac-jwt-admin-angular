@@ -1,5 +1,20 @@
 <div class="row">
-  <nb-card>
-    <nb-card-body>Hello from ngx-admin sandbox project.</nb-card-body>
-  </nb-card>
+  <div class="col-12">
+    <nb-card>
+      <nb-card-header>Spring Boot Angular Admin</nb-card-header>
+      <nb-card-body>Hello from ngx-admin sandbox project. This is a sample admin dashboard to test a spring boot backend application with user roles and JWT authentication</nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <app-test-roles></app-test-roles>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <app-all-users [addButton]="false"></app-all-users>
+  </div>
 </div>

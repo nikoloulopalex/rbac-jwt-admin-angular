@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdministratorsComponent } from './administrators.component';
+import { RolesToBadgeComponent } from './roles-to-badge.component';
 
-describe('AdministratorsComponent', () => {
-  let component: AdministratorsComponent;
-  let fixture: ComponentFixture<AdministratorsComponent>;
+describe('RolesToBadgeComponent', () => {
+  let component: RolesToBadgeComponent;
+  let fixture: ComponentFixture<RolesToBadgeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdministratorsComponent ]
+      declarations: [ RolesToBadgeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdministratorsComponent);
+    fixture = TestBed.createComponent(RolesToBadgeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,4 +1,5 @@
-<a nbButton hero status="primary" [routerLink]="['/users/new-user']">Add new</a>
+<div class="row" *ngIf="addButton"><a nbButton hero status="primary" [routerLink]="['/users/new-user']" class="mb-2">Add new</a>
+</div>
 <div class="row ">
     <nb-card class="col-12">
         <nb-card-header>Users</nb-card-header>
@@ -17,7 +18,9 @@
                         <th scope="row">{{user.id}}</th>
                         <td>{{user.username}}</td>
                         <td>{{user.email}}</td>
-                        <td>{{user.roles[0].name}}</td>
+                        <td>
+                            <app-roles-to-badge [roles]="user.roles"></app-roles-to-badge>
+                        </td>
                     </tr>
                 </tbody>
             </table>

@@ -3,7 +3,7 @@
     <a href="#" class="sidebar-toggle" matRipple [matRippleUnbounded]="true" [matRippleCentered]="true" (click)="toggleSidebar()">
       <nb-icon [icon]="(materialTheme$ | async) ? 'menu-outline' : 'menu-2-outline'"></nb-icon>
     </a>
-    <a class="logo" href="#" (click)="navigateHome()">ngx-<span>admin</span></a>
+    <a class="logo" href="#" (click)="navigateHome()">Admin<span></span></a>
   </div>
   <nb-select status="primary" matRipple [selected]="currentTheme" (selectedChange)="changeTheme($event)">
     <nb-option *ngFor="let theme of themes" [value]="theme.value" matRipple>{{ theme.name }}</nb-option>

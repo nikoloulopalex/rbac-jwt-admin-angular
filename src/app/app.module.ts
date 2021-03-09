@@ -12,17 +12,18 @@ import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {
+  NbCardModule,
   NbChatModule,
   NbDatepickerModule,
   NbDialogModule,
   NbMenuModule,
+  NbProgressBarModule,
   NbSidebarModule,
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
 import { SecurityModule } from './security/security.module';
 import { Interceptor } from './@core/utils/interceptor.service';
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -31,7 +32,6 @@ import { Interceptor } from './@core/utils/interceptor.service';
     HttpClientModule,
     AppRoutingModule,
     SecurityModule,
-
     ThemeModule.forRoot(),
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),

@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
 
 @Component({
-  selector: 'ngx-administrators',
-  templateUrl: './administrators.component.html',
-  styleUrls: ['./administrators.component.scss']
+  selector: 'app-all-users',
+  templateUrl: './all-users.component.html',
+  styleUrls: ['./all-users.component.scss']
 })
-export class AdministratorsComponent implements OnInit {
-
+export class AllUsersComponent implements OnInit {
+  @Input() addButton: boolean = true;
   users = [];
   constructor(private usersService: UsersService) { }
 
