@@ -32,7 +32,6 @@ export class CreateUserComponent implements OnInit {
 
   createUser() {
     this.isSubmitted = true;
-    console.log("hereee");
     if (this.createUserForm.invalid) return;
     let user = {
       email: this.createUserForm.value.email,
@@ -40,13 +39,11 @@ export class CreateUserComponent implements OnInit {
       password: this.createUserForm.value.password,
       role: []
     }
-    console.log(this.selectedRoles);
     this.selectedRoles.forEach(role => {
       if (role.status == true) {
         user.role.push(role.role);
       }
     })
-    console.log(user);
     this.userService.createUser(user).subscribe(data => {
       this.toastrService.show("User created!", 'Success:', { status: 'success' });
       this.router.navigate(['/users']);
